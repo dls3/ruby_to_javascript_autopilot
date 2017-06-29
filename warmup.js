@@ -28,7 +28,7 @@ words = {
 var num = 16;
 if (num < 10 ) {
   console.log(num + " is greater than 10.")
-} else if (num == 10 ) {
+} else if (num === 10 ) {
   console.log(num + " is exactly 10.")
 } else {
   console.log(num + " must be less than 10.");
@@ -95,7 +95,7 @@ function hello_world() {
   console.log("Hello world!")
 }
 
-hello_world
+hello_world();
 
 // def add(first_num, second_num)
 //   first_num + second_num
@@ -104,7 +104,7 @@ hello_world
 // puts amount
 
 function add(first_num, second_num) {
-  first_num + second_num
+  return first_num + second_num
 }
 
 var amount = add(5, 7)
