@@ -30,9 +30,9 @@ function getDestination(car) {
 }
 
 function fillUpGas(car) {
-  var old_gas = car["gas"];
+  var oldGas = car["gas"];
   car["gas"] = 100;
-  return console.log("Filled up to " + getGasDisplay(car["gas"]) + " on gas from " + getGasDisplay(old_gas) + " .")
+  return console.log("Filled up to " + getGasDisplay(car["gas"]) + " on gas from " + getGasDisplay(oldGas) + " .");
 }
 
 function getGasDisplay(gas_amount) {
@@ -52,7 +52,7 @@ function drive(car, city_distance) {
 
 function dropOffPassengers(car) {
   var previous_passengers = car["passengers"];
-  var car["passengers"] = 0;
+  car["passengers"] = 0;
   return console.log("Dropped off " + previous_passengers + " passengers");
 }
 
@@ -74,7 +74,8 @@ function act(car) {
 function commandFleet(cars) {  // QUESTSIONS
   for (var i = 0; i < cars.length; i++) {
     var action = act(car);
-    console.log("Car " + (i + 1) " : " + "action");
+    var j = i + 1;
+    console.log("Car " + j + " : " + action);
   }
   return console.log("---")
 }
@@ -83,9 +84,9 @@ function addOneCarPerDay(cars, numDays) {
   for (var i = 0; i < numDays; i++) {
     var newCar = getNewCar;
     console.log(addCar + newCar);
-    return commandFleet(cars); 
+    return commandFleet(cars);
   }
 }
 
 var cars = [];
-addOneCarPerDay(car, 10);
+addOneCarPerDay(cars, 10);
