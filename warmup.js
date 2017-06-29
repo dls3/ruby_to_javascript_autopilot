@@ -15,7 +15,7 @@ var materials = ['wood', 'metal', 'stone'];
 words = {
   elephant: "The world's largest land mammal.",
   school: 'A place of learning.',
-  ice cream: 'A delicious milk-based dessert.'};
+  ice_cream: 'A delicious milk-based dessert.'};
 
 // num = 16
 // if num > 10
@@ -107,5 +107,5 @@ function add(first_num, second_num) {
   return first_num + second_num
 }
 
-var amount = add(5, 7)
-console.log(amount)
+var amount = add(5, 7);
+console.log(amount);
