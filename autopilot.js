@@ -35,35 +35,35 @@ function fillUpGas(car) {
   return console.log("Filled up to " + getGasDisplay(car["gas"]) + " on gas from " + getGasDisplay(oldGas) + " .");
 }
 
-function getGasDisplay(gas_amount) {
-  return gas_amount
+function getGasDisplay(gasAmount) {
+  return gasAmount
 }
 
-function drive(car, city_distance) {
+function drive(car, cityDistance) {
   {
-  if (car["gas"] < city_distance) {
+  if (car["gas"] < cityDistance) {
     return fillUpGas(car)
   };
   }
   car["city"] = getDestination(car);
-  car["gas"] -= city_distance;
+  car["gas"] -= cityDistance;
   return "Drove to " + car["city"] + " . Remainging gas: " + getGasDisplay(car["gas"]);
 }
 
 function dropOffPassengers(car) {
-  var previous_passengers = car["passengers"];
+  var previousPassengers = car["passengers"];
   car["passengers"] = 0;
-  return console.log("Dropped off " + previous_passengers + " passengers");
+  return console.log("Dropped off " + previousPassengers + " passengers");
 }
 
 function act(car) {
-  var distance_between_cities = 50;
+  var distanceBetweenCities = 50;
   if (car["gas"] < 20) {
     fillUpGas(car)
   } else if (car["passengers"] < 3) {
     pickUpPassenger(car)
   } else
-    if (car["gas"] < distance_between_cities) {
+    if (car["gas"] < distanceBetweenCities) {
       return fillUpGas(car)
   }
   var droveTo = drive(car, distanceBetweenCities);
@@ -73,7 +73,7 @@ function act(car) {
 
 function commandFleet(cars) {  // QUESTSIONS
   for (var i = 0; i < cars.length; i++) {
-    var action = act(car);
+    var action = act(cars[i]);
     var j = i + 1;
     console.log("Car " + j + " : " + action);
   }
@@ -83,7 +83,7 @@ function commandFleet(cars) {  // QUESTSIONS
 function addOneCarPerDay(cars, numDays) {
   for (var i = 0; i < numDays; i++) {
     var newCar = getNewCar;
-    console.log(addCar + newCar);
+    console.log(addCar(cars, newCar));
     return commandFleet(cars);
   }
 }
