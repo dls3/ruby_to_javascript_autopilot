@@ -74,8 +74,7 @@ function act(car) {
 function commandFleet(cars) {  // QUESTSIONS
   for (var i = 0; i < cars.length; i++) {
     var action = act(cars[i]);
-    var j = i + 1;
-    console.log("Car " + j + " : " + action);
+    console.log("Car " + (i + 1) + " : " + action);
   }
   return console.log("---")
 }
