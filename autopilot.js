@@ -6,8 +6,8 @@ function getNewCar() {
   };
 }
 
-function addCar(car, new_car) {
-  var car = car.push(new_car);
+function addCar(car, newCar) {
+  var car = car.push(newCar);
   return console.log("Adding new car to fleet. Fleet size is now " + cars.length + " .");
 }
 
